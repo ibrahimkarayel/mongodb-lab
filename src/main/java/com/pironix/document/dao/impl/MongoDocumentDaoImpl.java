@@ -143,11 +143,11 @@ public class MongoDocumentDaoImpl<T> implements MongoDocumentDao<T> {
     public void createCollection(String collection) {
         try {
             mongoDatabase = DbConnection.getInstance().getMongoClient().getDatabase(FileHelper.db);
-            System.out.println("Connect to database successfully");
+            logger.info("Connect to database successfully");
             mongoDatabase.createCollection(collection);
-            System.out.println("create collection successfully");
+            logger.info("create collection successfully");
         } catch (Exception e) {
-
+            logger.error(e.getMessage());
         }
     }
 }
