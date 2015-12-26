@@ -146,6 +146,7 @@ public class MongoDocumentDaoImpl<T> implements MongoDocumentDao<T> {
             logger.info("Connect to database successfully");
             mongoDatabase.createCollection(collection);
             logger.info("create collection successfully");
+
         } catch (Exception e) {
             logger.error(e.getMessage());
         }
